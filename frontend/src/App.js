@@ -1,6 +1,6 @@
 import { useState  } from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
-// import { Room } from "@material-ui/icons";
+import { Room } from "@material-ui/icons";
 
 function App() {
   const [viewport, setViewport] = useState({
@@ -8,7 +8,7 @@ function App() {
     height: "100vh",
     latitude: 37.7577,
     longitude: -122.4376,
-    zoom: 2
+    zoom: 4
   });
   return (
     <div className="App">
@@ -24,6 +24,7 @@ function App() {
         offsetLeft={-20}
         offsetTop={-10}
         >
+          <Room style={{fontSize:viewport.zoom *10}}/>
           <div>You are here</div>
         </Marker>
         </ReactMapGL>
